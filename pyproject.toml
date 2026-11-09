@@ -1,18 +1,18 @@
-[tool.mypy]
-python_version = "3.14"
-files = ["P_Bits", "Tests"]
-exclude = '^(Data|Figures|Notes|Hardware|Analysis|Experiments|Scratchpad)/'
-strict = true
-enable_error_code = ["possibly-undefined"]
-warn_unreachable = true
-cache_dir = "~/.cache/mypy/pbit"
-
-disable_error_code = ["import-untyped"]
-
-[[tool.mypy.overrides]]
-module = ["sympy.*"]
-follow_imports = "skip"
-
 [tool.pytest.ini_options]
 testpaths = ["Tests"]
 pythonpath = ["."]
+
+[tool.pyrefly]
+project-includes = ["P_Bits", "Tests"]
+project-excludes = [
+    "**/Data/", "**/Figures/", "**/Notes/", "**/Hardware/",
+    "**/Analysis/", "**/Experiments/", "**/Documents/",
+]
+python-version = "3.14.0"
+preset = "strict"
+replace-untyped-imports-with-any = ["sympy.*"]
+
+[tool.pyrefly.errors]
+unannotated-return = "error"
+no-any-return = "error"
+unused-type-ignore = "error"

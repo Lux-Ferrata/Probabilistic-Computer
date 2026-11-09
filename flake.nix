@@ -1,5 +1,5 @@
 {
-  description = "Personal Portfolio Project: P-Bit Computer on Okika FPAA";
+  description = "Personal project, working through Ising models, Boltzmann machines, and related subjects.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -19,7 +19,6 @@
         python = pkgs.python314;
         pythonEnv = python.withPackages (
           ps: with ps; [
-            mypy
             numba
             pytest
             sympy
@@ -34,6 +33,7 @@
         devShells.default = pkgs.mkShell {
           packages = [
             pythonEnv
+            pkgs.pyrefly
           ];
 
           shellHook = ''
