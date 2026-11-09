@@ -3,8 +3,8 @@ A probabilistic computer built from p-bits, starting from the Ising model by han
 
 Detailed project logs and discussion of theory can be found on my personal [blog](https://lux-ferrata.org/projects/probabilistic-computation/).
 
-## Currently Active
-I am focused on understanding the fundamentals of the Ising model by working through the equations by hand before implementing them in Python.
+## Active
+I am currently focusing on understanding the fundamentals of the Ising model by working through the equations by hand before implementing them in Python.
 
 ## Time Log
 | Date | Time | Work |
